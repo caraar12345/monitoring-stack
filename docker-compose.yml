@@ -1,0 +1,11 @@
+services:
+  prometheus:
+    user: "501:20"
+    image: prom/prometheus
+    container_name: prometheus
+    hostname: prometheus
+    volumes:
+      - $HOME/Docker/monitoring/prometheus/config:/etc/prometheus
+      - $HOME/Docker/monitoring/prometheus:/prometheus
+    ports: 
+      - "9090:9090"
