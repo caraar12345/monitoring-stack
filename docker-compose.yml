@@ -9,3 +9,12 @@ services:
       - $HOME/Docker/monitoring/prometheus:/prometheus
     ports: 
       - "9090:9090"
+  grafana:
+    user: "501:20"
+    image: grafana/grafana
+    container_name: grafana
+    hostname: grafana
+    volumes:
+      - $HOME/Docker/monitoring/grafana:/var/lib/grafana
+    ports:
+      - "3000:3000"
